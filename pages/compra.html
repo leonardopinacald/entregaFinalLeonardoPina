@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/app.js" defer></script>
+    <link rel="stylesheet" href="../css/citroenmenu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Finalizar su Compra</title>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <a href="../index.html"><img src="../img/logo.jpg" width="250PX" alt="logo"></a>
+                    <span id="logo"></span>
+                </div>
+                <div class="two columns u-pull-right">
+                    <ul>
+                        <li class="submenu">
+                            <img src="../img/cart.png" id="img-carrito" alt="cart">
+
+                            <div id="carrito">
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>  
+    <main class="mainCompra">
+
+        <div class="card">    
+            <div class="informacionPago">
+            <h1 class="h1Pagos">Reserva tu 0Km!</h1>
+            <div id="result">
+                <img class="imgPago" src="../img/pagos.png" alt="pagos">
+            </div>
+            <button id="pago" class="botonera" type="button">1. ✅ Verifica informacion de Pago</button>
+            
+        </div>
+        </div>
+        <div  class="card">
+            <div class="contenedor_formulario">
+                <form action="">
+                    <section class="formulario">
+                            <div class="interiorFormulario">
+                                <h1 class="h1Pagos">Completa tus datos!</h1>
+                                <div class="datosFormulario">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" name="nombre" id=nombre placeholder="Nombre y apellido">
+                                </div>
+                                <div class="datosFormulario">
+                                    <label for="apellido">Dirección:</label>
+                                    <input type="text" name="apellido" id="apellido" placeholder="Calle, Ciudad">
+                                </div>
+                                <div class="datosFormulario">
+                                    <label for="email">Correo:</label>
+                                    <input type="email" id="correo" placeholder="tuemail@gmail.com">
+                                </div>
+                                <div class="datosFormulario">
+                                    <label for="telefono">Teléfono:</label>
+                                    <input type="text" name="telefono" id="telefono" placeholder="112345678">
+                                </div>
+                                <div class="datosFormulario">
+                                    <label for="comentarios">Horario de contacto preferido?</label>
+                                    <textarea name="comentarios" id="comentario" rows="1"></textarea>
+                                </div>
+                                <div class="datosFormulario">
+                                    <button class="botonera" type="button" onclick="captura()">2. ✅ Confirmar tu pedido</button>
+                                </div>
+                            </div>
+                    </section>
+                </form>
+        </div>
+        </div>
+        <div  class="card">
+            <div class="whatsapp">
+            <h1 class="h1Pagos">Contacto directo!</h1>
+            <div>
+                <a href="https://wa.me/5491135579780"><img class="imgPago" src="../img/whatsapp.png" alt="whatsapp"></a>
+            </div>
+            <a class="pagoWhatsapp" href="https://wa.me/5491135579780">3. ✅ Envía tu comprobante aquí</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Solicitud HTTP para obtener datos de pagos desde JSON local
+            const btnPagos = document.querySelector('#pago');
+    
+            document.addEventListener('DOMContentLoaded', ()=>{
+            btnPagos.addEventListener('click', ()=>{
+            fetch('../js/producto.json')
+                .then((respuesta)=>{
+                    return respuesta.json();
+                })
+                .then((respuesta)=>{
+                 document.querySelector('#result').innerHTML = `
+                    <hr/>
+                    <div>
+                    <h4>${"Transferencia Bancaria"}</h4>
+                    <p>${"Para finalizar tu compra: Realiza tu reserva por transferencia, déjanos tus datos y envía el comprobante!"}<p>
+                    <p>${respuesta.banco}</p>
+                    <p>${respuesta.tipo}</p>
+                    <p>${respuesta.numeroCbu}</p>
+                    <p>${respuesta.nombre}</p>
+                    <p>${respuesta.cuit}</p>
+                    <p>${respuesta.correo}</p>
+                    </div>
+                    <hr/>
+                    `
+                })
+                .catch((error)=>{
+                    console.log("Ups!", error);
+                })
+            })
+         })
+        </script>    
+</body>
+</html>

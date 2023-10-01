@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/citroenmenu.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>D'arc Citroen Store</title>
+    
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <a href="../index.html"><img src="./img/logo.jpg" width="250PX" alt="logo"></a>
+                    <span id="logo"></span>
+                </div>
+                <div class="two columns u-pull-right">
+                    <ul>
+                        <li class="submenu">
+                            <img src="img/cart.png" id="img-carrito" alt="cart">
+                            <div id="carrito">
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="boton u-full-width">Vaciar Carrito</a>
+                                <br>
+                                <br>
+                                <a id="finalizarCompra" class="nav-link" href="./pages/compra.html"> Finalizar Compra</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="lista-productos" class="container">
+        <h1 id="encabezado" class="encabezado">Tu nuevo 0Km te está esperando!</h1>
+        <div class="row">
+            <div class="four columns">
+                <div class="card" id="https://www.citroen.com.ar/content/dam/citroen/products/1csb/thumb_c3.png">
+                    <img src="img/c3.png" alt="c3" class="imagen-producto u-full-width">
+                    <div class="info-card">
+                        <h4>Nuevo C3</h4>
+                        <p>Tenelo desde</p>
+                        <p class="precio">$11.103.000 <span class="u-pull-right ">$9.993.100</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/c4cactus.png" alt="C4 Cactus" class="imagen-producto u-full-width">
+                    <div class="info-card">
+                        <h4>C4 Cactus</h4>
+                        <p>Tenelo desde</p>
+                        <p class="precio">$18.450.000 <span class="u-pull-right ">$15.100.000</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="2">Agregar Al Carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/c5aircross.png" alt="C5" class="imagen-producto u-full-width">
+                    <div class="info-card">
+                        <h4>C5 Aircross</h4>
+                        <p>Tenela desde</p>
+                        <p class="precio">$34.380.000 <span class="u-pull-right ">$29.970.000</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="3">Agregar Al Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/berlingofurgon.png" alt="Berlingo" class="imagen-producto u-full-width">
+                    <div class="info-card">
+                        <h4>Berlingo Furgon</h4>
+                        <p>Tenela desde</p>
+                        <p class="precio">$10.985.000 <span class="u-pull-right ">$9.995.000</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="4">Agregar Al Carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/jumpy.png" alt="Jumpy" class="imagen-producto u-full-width">
+                    <div class="info-card">
+                        <h4>Jumpy Furgon</h4>
+                        <p>Tenela desde</p>
+                        <p class="precio">$19.840.000 <span class="u-pull-right ">$15.750.000</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="5">Agregar Al Carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/jumper.png" alt="" class="imagen-producto u-full-width">
+                    <div class="info-card">
+                        <h4>Jumper Furgon</h4>
+                        <p>Tenela desde</p>
+                        <p class="precio">$21.840.000 <span class="u-pull-right ">$19.750.000</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="6">Agregar Al Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
